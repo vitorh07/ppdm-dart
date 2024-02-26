@@ -5,18 +5,22 @@ void main() {
     50,00    |   Moeda de cinquenta balsâmias
     100,00  |   Moeda de cem balsâmias 
 */
-  var valor = 1598;
+  var valor = 15094;
   var unidade = (valor % 10).floor();
   var dezena = ((valor / 10).floor() % 10) * 10;
   //var centena = ((valor / 100).floor() % 10) * 100;
 
-  print('BS $valor');
+  print('BS $valor\n');
 
   //Unidade
-  if (unidade % 5 > 1) {
+  if (unidade == 5) {
+    print('${unidade - 4} moedas de cinco balsâmias');
+  } else if (unidade > 5) {
     print('''
-${unidade ~/ 5} moedas de cinco balsâmias
-${unidade - 5} moedas de uma balsâmias''');
+${unidade - 5} moedas de uma balsâmias
+${unidade ~/ 5} moedas de cinco balsâmias''');
+  } else {
+    print('$unidade moedas de uma balsâmias');
   }
 
   //Dezena
@@ -26,8 +30,8 @@ ${unidade - 5} moedas de uma balsâmias''');
     print('${dezena ~/ 10} moedas de dez balsâmias');
   } else if (dezena > 50) {
     print('''
-${dezena ~/ 50} moedas de cinquenta balsâmias
-${((dezena / 10) - 5).toInt()} moedas de dez balsâmias''');
+${((dezena / 10) - 5).toInt()} moedas de dez balsâmias
+${dezena ~/ 50} moedas de cinquenta balsâmias''');
   }
 
   //Centena
