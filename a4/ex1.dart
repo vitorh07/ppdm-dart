@@ -8,7 +8,7 @@ void main() {
   "Abacaxi": 2.5,
 };
   print("Preço das frutas:");
-  // Utilize uma estrutura de repetição para apresentar os valores do map
+  // Estrutura de repetição
   for (var valores in frutas.entries) {
     print("${valores.key}: R\$${valores.value}");
   }
